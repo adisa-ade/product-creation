@@ -4,7 +4,7 @@ import Form from '../ui/Form';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 
-function ProductForm() {
+function ProductForm({ currentView, setCurrentView }) {
   const [formData, setFormData] = useState({
     productName: '',
     description: '',
@@ -116,7 +116,7 @@ function ProductForm() {
     };
 
     try {
-      const response = await axios.request(options);      
+      const response = await axios.request(options);
       toast.success('Form Successfully Submitted');
       setFormData({
         productName: '',
@@ -128,6 +128,10 @@ function ProductForm() {
         manufacturer: '',
         weight: '',
       });
+      const timeoutId  = setTimeout(() => {
+        setCurrentView('list')
+      }, 1500);            
+
       return response.data
     } catch (error) {
       toast.error(error.response?.data?.message || 'Something went wrong');
