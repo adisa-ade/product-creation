@@ -11,8 +11,10 @@ function App() {
         <button onClick={() => setCurrentView('form')}>Create Product</button>
         <button onClick={() => setCurrentView('list')}>View Products</button>
       </nav>
+      <main>        
       {currentView === 'form' && < ProductForm />}
       {currentView === 'list' && < ProductList />}
+      </main>
     </div>
   );
 }

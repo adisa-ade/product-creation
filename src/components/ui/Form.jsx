@@ -48,7 +48,7 @@ function Form({ formData, handleChange, handleSubmit, errors, isSubmitting }) {
         </div>
         <div className="form-row">
           <div className="form-group">
-            <Label htmlFor="sku">Category *</Label>
+            <Label htmlFor="category">Category *</Label>
             <select
               id="category"
               name="category"
@@ -64,7 +64,7 @@ function Form({ formData, handleChange, handleSubmit, errors, isSubmitting }) {
           </div>
 
           <div className="form-group">
-            <Label htmlFor="sku">Manufacturer</Label>
+            <Label htmlFor="manufacturer">Manufacturer</Label>
             <Input
               type="type"
               id="manufacturer"
